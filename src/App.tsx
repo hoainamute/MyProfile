@@ -13,6 +13,7 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import CVHeader from './components/CVHeader/CVHeader';
 import { ProfileData } from './types';
+import SkillsShowcase from './components/Skills/SkillsShowcase';
 
 const App: React.FC = () => {
   const [selectedPost, setSelectedPost] = useState<ProfileData['blog'][0] | null>(null);
@@ -58,6 +59,9 @@ const App: React.FC = () => {
 
       {/* Skills & Experience */}
       <Experience data={profileData} />
+      
+      {/* Skills Showcase */}
+      <SkillsShowcase skills={profileData.skills} />
 
       {/* Featured Projects */}
       <Projects data={profileData} />
