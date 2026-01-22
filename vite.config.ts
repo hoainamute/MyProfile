@@ -5,7 +5,7 @@ export default defineConfig({
   base: '/MyProfile/',
   plugins: [react()],
   define: {
-    'process.env.API_KEY': JSON.stringify(process.env.API_KEY || '')
+    'process.env.API_KEY': JSON.stringify(process.env.VITE_API_KEY || '')
   },
   build: {
     outDir: 'dist',

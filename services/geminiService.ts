@@ -1,8 +1,7 @@
-
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { profileData } from "../data";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const genAI = new GoogleGenerativeAI(process.env.API_KEY || "");
 
 export const getGeminiResponse = async (userMessage: string) => {
   const systemInstruction = `
@@ -25,16 +24,13 @@ export const getGeminiResponse = async (userMessage: string) => {
   `;
 
   try {
-    const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
-      contents: userMessage,
-      config: {
-        systemInstruction,
-        temperature: 0.7,
-      },
+    const model = genAI.getGenerativeModel({ 
+      model: "gemini-1.5-flash",
+      systemInstruction
     });
-
-    return response.text || "Xin lỗi, tôi gặp chút trục trặc khi xử lý yêu cầu.";
+    
+    const result = await model.generateContent(userMessage);
+    return result.response.text() || "Xin lỗi, tôi gặp chút trục trặc khi xử lý yêu cầu.";
   } catch (error) {
     console.error("Gemini API Error:", error);
     return "Hệ thống đang bận, vui lòng thử lại sau.";
