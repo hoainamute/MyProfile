@@ -1,121 +1,97 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nguyễn Hoài Nam | Portfolio & CV</title>
+  <meta name="description" content="Nguyễn Hoài Nam - Senior Software Engineer & Frontend Architect. Portfolio, blog, và dự án của một lập trình viên Việt Nam tài năng.">
+  <meta name="keywords" content="React, Next.js, TypeScript, Frontend, Software Engineer, Portfolio">
+  <meta name="author" content="Nguyễn Hoài Nam">
+  <meta name="theme-color" content="#4f46e5">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hoainamute.github.io/MyProfile">
+  <meta property="og:title" content="Nguyễn Hoài Nam | Senior Frontend Engineer">
+  <meta property="og:description" content="Portfolio của lập trình viên React/Next.js chuyên sâu về hiệu suất và kiến trúc hệ thống.">
+  <meta property="og:image" content="https://hoainamute.github.io/MyProfile/avatars/IMG_1.jpg">
+  <meta property="og:site_name" content="Nguyễn Hoài Nam Portfolio">
+  <meta property="og:locale" content="vi_VN">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://hoainamute.github.io/MyProfile">
+  <meta name="twitter:title" content="Nguyễn Hoài Nam | Senior Frontend Engineer">
+  <meta name="twitter:description" content="Portfolio của lập trình viên React/Next.js chuyên sâu về hiệu suất và kiến trúc hệ thống.">
+  <meta name="twitter:image" content="https://hoainamute.github.io/MyProfile/avatars/IMG_1.jpg">
+  
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://hoainamute.github.io/MyProfile">
+  
+  <!-- Preconnect untuk external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
+      theme: {
+        extend: {}
+      }
     }
   </script>
+  
+  <!-- Theme initialization (prevent flash) -->
   <script>
-    // Initialize theme to prevent flash of unstyled content
     if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      scroll-behavior: smooth;
     }
     .glass {
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     .dark .glass {
       background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .dark-glass {
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .gradient-text {
-      background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
-    /* Hiệu ứng in ấn chuyên nghiệp */
     @media print {
-      @page {
-        margin: 1.5cm;
-        size: A4;
-      }
-      
-      nav, footer, .no-print, button, #contact, .fixed, .ai-assistant-btn {
-        display: none !important;
-      }
-      
-      body {
-        background: white !important;
-        color: black !important;
-      }
-
-      .print-content {
-        display: block !important;
-        width: 100% !important;
-      }
-
-      section {
-        padding: 1rem 0 !important;
-        page-break-inside: avoid;
-        border: none !important;
-      }
-
-      h1 { font-size: 28pt !important; margin-bottom: 10pt !important; }
-      h2 { font-size: 18pt !important; border-bottom: 1px solid #eee; padding-bottom: 5pt; margin-bottom: 15pt !important; }
-      p, li, span { font-size: 10pt !important; color: #333 !important; }
-      
-      .gradient-text {
-        -webkit-text-fill-color: black !important;
-        background: none !important;
-        color: black !important;
-      }
-      
-      .cv-header {
-        display: flex !important;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 2rem;
-        border-bottom: 2px solid #333;
-        padding-bottom: 1rem;
-      }
+      .no-print { display: none !important; }
+      .print-content { page-break-inside: avoid; }
+      body { background: white; }
     }
     
-    .cv-header {
-      display: none;
+    .cv-header { display: none; }
+    @media print {
+      .cv-header { display: block; padding: 40px; text-align: center; border-bottom: 2px solid #e2e8f0; }
     }
   </style>
-
-<link rel="stylesheet" href="/index.css">
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
-    "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
-  }
-}
-</script>
-  <script type="module" crossorigin src="/MyProfile/assets/index-HjZHLcln.js"></script>
+  <script type="module" crossorigin src="/MyProfile/assets/index-CU2UsW_e.js"></script>
 </head>
 <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
   <div id="root"></div>
-  <!-- Entry point cho React application -->
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json" id="schema-markup"></script>
 </body>
 </html>
