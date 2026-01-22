@@ -9,6 +9,7 @@ export interface ProfileData {
   email: string;
   github: string;
   linkedin: string;
+  facebook?: string; 
   location: string;
   skills: {
     category: string;

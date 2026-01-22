@@ -40,11 +40,21 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
             >
               GitHub
             </a>
+            {/* ✅ THÊM FACEBOOK */}
+            {data.facebook && (
+              <a 
+                href={data.facebook} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-3 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl hover:text-blue-600 dark:hover:text-blue-400 shadow-sm transition-all hover:-translate-y-1"
+              >
+                Facebook
+              </a>
+            )}
           </div>
         </div>
       </div>
     </section>
   );
 };
-
 export default Contact;

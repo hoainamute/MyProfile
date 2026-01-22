@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { profileData } from './data';
+import { schemaMarkup } from './utils/seo';
 import Navbar from './components/Navbar';
 import AiAssistant from './components/AiAssistant';
 import BlogModal from './components/BlogModal';
@@ -15,6 +16,17 @@ import { ProfileData } from './types';
 
 const App: React.FC = () => {
   const [selectedPost, setSelectedPost] = useState<ProfileData['blog'][0] | null>(null);
+
+  useEffect(() => {
+    // Add structured data
+    const schemaElement = document.getElementById('schema-markup');
+    if (schemaElement) {
+      schemaElement.textContent = JSON.stringify(schemaMarkup(profileData));
+    }
+
+    // Set page title
+    document.title = `${profileData.name} | Senior Frontend Engineer`;
+  }, []);
 
   const handlePrint = () => {
     console.log("Preparing PDF Export...");

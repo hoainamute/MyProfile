@@ -17,8 +17,9 @@ export const profileData: ProfileData = {
   bio: "Đam mê xây dựng các sản phẩm web chất lượng cao, tối ưu hóa hiệu suất và thúc đẩy sự phát triển của cộng đồng lập trình viên Việt Nam.",
   location: "TP. Hồ Chí Minh, Việt Nam",
   email: "nghnam.nguyen@gmail.com",
-  github: "https://github.com/namhoainguyen",
+  github: "https://github.com/hoainamute",
   linkedin: "https://www.linkedin.com/in/namhoainguyen/",
+  facebook: "https://www.facebook.com/nem.hnguyen/",
   about: "tôi là 1 kĩ sư phần mêm với hơn 6 năm kinh nghiệm chuyên sâu về phát triển phần mềm cho hệ thống nhúng, ô tô, và là chuyên sâu về hiệu suất, ổn định của hệ thống telematics",
   
   skills: [
