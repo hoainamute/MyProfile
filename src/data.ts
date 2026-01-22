@@ -6,12 +6,11 @@ export const profileData: ProfileData = {
   role: "Senior Software Engineer & Frontend Architect",
   avatar: "https://media.licdn.com/dms/image/v2/D5603AQHU6G9mXv1O3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691414441584?e=1746057600&v=beta&t=fFz9vYn5fKzKx-z0xXz-z0xXz-z0xXz-z0xXz-z0xXz",
   avatarGallery: [  // ✅ Cập nhật thành local URLs
-    "public/avatars/IMG_0823.JPG",
-    "public/avatars/IMG_1.jpg",
-    "public/avatars/IMG_2.jpg",
-    "public/avatars/IMG_3.jpg",
-    "public/avatars/IMG_4.jpg",
-    // "public/avatars/IMG_5.jpg"
+    "/avatars/IMG_1.jpg",
+    "/avatars/IMG_2.jpg",
+    "/avatars/IMG_3.jpg",
+    "/avatars/IMG_4.jpg",
+    "/avatars/IMG_5.jpg"
   ],
   bio: "Đam mê xây dựng các sản phẩm web chất lượng cao, tối ưu hóa hiệu suất và thúc đẩy sự phát triển của cộng đồng lập trình viên Việt Nam.",
   location: "TP. Hồ Chí Minh, Việt Nam",
