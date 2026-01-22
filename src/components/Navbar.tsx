@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-4 no-print">
       <div className="max-w-6xl mx-auto flex items-center justify-between glass px-4 md:px-6 py-3 rounded-2xl shadow-sm">
-        <div className="text-xl font-bold gradient-text">PRO.FOLIO</div>
+        <div className="text-xl font-bold gradient-text">NAM NGUYEN PROFILE</div>
         
         <div className="hidden lg:flex space-x-8 text-sm font-medium text-slate-600 dark:text-slate-300">
           <a href="#about" className="hover:text-indigo-600 transition">Về tôi</a>
