@@ -11,7 +11,7 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
   return (
     <section id="experience" className="py-20 px-6 print-content">
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-16">
-        <SkillsSection skills={data.skills} />
+        {/* <SkillsSection skills={data.skills} /> */}
         <ExperienceTimeline experience={data.experience} />
       </div>
     </section>

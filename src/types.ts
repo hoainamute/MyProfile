@@ -5,12 +5,21 @@ export interface ProfileData {
   avatar: string;
   avatarGallery?: string[];
   bio: string;
-  about: string;
+  about: string[];
   email: string;
   github: string;
   linkedin: string;
   facebook?: string; 
   location: string;
+
+  education: {
+    school: string;
+    degree: string;
+    field?: string;
+    period: string;
+    description?: string[];
+  }[];
+
   skills: {
     category: string;
     items: string[];

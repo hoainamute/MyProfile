@@ -1,58 +1,74 @@
 import { ProfileData } from './types';
 
-// ✅ Get base path từ Vite (sẽ là '/' khi local, '/MyProfile/' khi deploy)
 const BASE_PATH = import.meta.env.BASE_URL;
 
 export const profileData: ProfileData = {
   name: "Nguyễn Hoài Nam",
-  role: "Senior Software Engineer & Frontend Architect",
+  role: "Senior Embeeded Software Engineer",
   avatar: "https://media.licdn.com/dms/image/v2/D5603AQHU6G9mXv1O3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691414441584?e=1746057600&v=beta&t=fFz9vYn5fKzKx-z0xXz-z0xXz-z0xXz-z0xXz-z0xXz",
   avatarGallery: [
-    `${BASE_PATH}avatars/IMG_1.jpg`,  // ✅ FIX
+    `${BASE_PATH}avatars/IMG_1.jpg`,
     `${BASE_PATH}avatars/IMG_2.jpg`,
     `${BASE_PATH}avatars/IMG_3.jpg`,
     `${BASE_PATH}avatars/IMG_4.jpg`,
     `${BASE_PATH}avatars/IMG_5.jpg`
   ],
-  bio: "Đam mê xây dựng các sản phẩm web chất lượng cao, tối ưu hóa hiệu suất và thúc đẩy sự phát triển của cộng đồng lập trình viên Việt Nam.",
+  bio: "I am an Embedded Software Engineer with hands-on experience in the automotive domain, working across all layers from low-level firmware to high-level application development. Currently, I am focusing on system performance and stability, exploring methods to enhance reliability and efficiency. In addition, I am passionate about researching Android solutions, developing applications, and working with data collection and analysis.",
   location: "TP. Hồ Chí Minh, Việt Nam",
   email: "nghnam.nguyen@gmail.com",
   github: "https://github.com/hoainamute",
   linkedin: "https://www.linkedin.com/in/namhoainguyen/",
   facebook: "https://www.facebook.com/nem.hnguyen/",
-  about: "tôi là 1 kĩ sư phần mêm với hơn 6 năm kinh nghiệm chuyên sâu về phát triển phần mềm cho hệ thống nhúng, ô tô, và là chuyên sâu về hiệu suất, ổn định của hệ thống telematics",
+  about: ["I am a Embedded Software Engineer with 6 years of experience in the automotive domain,", 
+    "specializing in MCAL layer, telematics, and currently focusing on Linux system performance.",
+    "I always seeking inspiration at work and leveraging AI to achieve goals with accuracy, speed, and efficiency."],
+  
+  education: [
+    {
+      school: "Đại học ...",
+      degree: "Bachelor",
+      field: "Computer Engineering / Embedded Systems",
+      period: "2015 - 2019",
+      description: [
+        "Relevant coursework: Embedded Systems, Operating Systems, Networking",
+        "Activities: ...",
+      ],
+    },
+  ],
   
   skills: [
     {
-      category: "Frontend Architecture",
-      items: ["React", "Next.js", "TypeScript", "Performance Optimization", "Design Systems", "Tailwind CSS", "Module Federation"]
+      category: "System Performance",
+      items: ["Linux system", "C/C++", "Performance Optimization", "Design Systems", 
+        "Linux profiling/debugging", "BSP", "Yocto", "kernel"]
     },
     {
-      category: "Backend & Infrastructure",
-      items: ["Node.js", "GraphQL", "PostgreSQL", "Google Cloud Platform", "Docker", "Vercel", "CI/CD Pipeline"]
+      category: "Application Development",
+      items: ["Kotlin", "Android"]
     },
     {
-      category: "Leadership & Community",
-      items: ["Team Leadership", "Technical Writing", "Public Speaking", "Agile Methodology", "Mentoring", "Strategic Planning"]
+      category: "Automotive Development",
+      items: ["MCAL", "CAN", "Agile", "V-MODEL", "C"]
+    },
+    {
+      category: "Complementary Skills",
+      items: ["GIT"]
     }
   ],
   
   experience: [
     {
-      company: "Leading Tech Corp",
-      position: "Senior Software Engineer / Frontend Architect",
-      period: "2020 - Hiện tại",
+      company: "LGEDV ",
+      position: "Senior Research Engineer",
+      period: "2022-07 - Now",
       description: [
-        "Chịu trách nhiệm thiết kế kiến trúc Frontend cho hệ thống phục vụ hơn 1 triệu người dùng hàng tháng.",
-        "Xây dựng và duy trì hệ thống Design System chung cho 3 dòng sản phẩm khác nhau.",
-        "Đào tạo và dẫn dắt đội ngũ 10+ lập trình viên về các best practices trong React và TypeScript.",
-        "Tối ưu hóa Lighthouse score từ 60 lên 95+ cho các trang landing page chiến lược."
+        ""
       ]
     },
     {
-      company: "Innovative Fintech Startup",
-      position: "Fullstack Developer",
-      period: "2018 - 2020",
+      company: "Digime",
+      position: "Solution Engineer",
+      period: "2023 - now",
       description: [
         "Phát triển nền tảng thanh toán trực tuyến bảo mật cao sử dụng kiến trúc Microservices.",
         "Xử lý các bài toán về đồng bộ dữ liệu thời gian thực giữa ứng dụng web và mobile.",
@@ -60,9 +76,9 @@ export const profileData: ProfileData = {
       ]
     },
     {
-      company: "Global Outsourcing Agency",
-      position: "Software Engineer Intern",
-      period: "2017 - 2018",
+      company: "Renesas Design Viet Nam",
+      position: "Software Engineer",
+      period: "2019 - 2022",
       description: [
         "Tham gia phát triển dự án CMS cho khách hàng thị trường Nhật Bản.",
         "Làm quen với quy trình làm việc chuyên nghiệp chuẩn Agile/Scrum."

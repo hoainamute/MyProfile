@@ -14,15 +14,21 @@ import Footer from './components/Footer/Footer';
 import CVHeader from './components/CVHeader/CVHeader';
 import { ProfileData } from './types';
 import SkillsShowcase from './components/Skills/SkillsShowcase';
+import { useAutoLocation } from './hooks/useAutoLocation';
+import Education from './components/Education/Education';
 
 const App: React.FC = () => {
   const [selectedPost, setSelectedPost] = useState<ProfileData['blog'][0] | null>(null);
-
+  const { location: autoLocation } = useAutoLocation()
+  const data: ProfileData = {
+    ...profileData,
+    location: autoLocation || profileData.location,
+  }
   useEffect(() => {
     // Add structured data
     const schemaElement = document.getElementById('schema-markup');
     if (schemaElement) {
-      schemaElement.textContent = JSON.stringify(schemaMarkup(profileData));
+      schemaElement.textContent = JSON.stringify(schemaMarkup(data));
     }
 
     // Set page title
@@ -56,6 +62,9 @@ const App: React.FC = () => {
 
       {/* About Section */}
       <About data={profileData} />
+
+      {/* Education */}
+      <Education data={profileData} />
 
       {/* Skills & Experience */}
       <Experience data={profileData} />
